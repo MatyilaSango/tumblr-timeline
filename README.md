@@ -45,4 +45,4 @@ let data = await exampleVariable.getMediaLinks("Programming", "photo", 10, 0)
 
 ## License
 
-(MIT)[https://github.com/MatyilaSango/tumblr-timeline/blob/main/LICENSE]
+[MIT](https://github.com/MatyilaSango/tumblr-timeline/blob/main/LICENSE)
