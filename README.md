@@ -5,7 +5,9 @@ Get medias in a user's timeline.
 
 Using npm:
 
-`$ npm install @sango-dev/tumblr-timeline`
+```
+$ npm install @sango-dev/tumblr-timeline
+```
 
 ## Usage example:
 
