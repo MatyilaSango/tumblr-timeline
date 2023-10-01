@@ -1,0 +1,33 @@
+{
+  "name": "@sango-dev/tumblr-timeline",
+  "version": "1.0.0",
+  "description": "Get medias in a user's timeline.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node scr/index.js",
+    "watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatyilaSango/tumblr-timeline.git"
+  },
+  "keywords": [
+    "tumblr"
+  ],
+  "author": "Sango",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatyilaSango/tumblr-timeline/issues"
+  },
+  "homepage": "https://github.com/MatyilaSango/tumblr-timeline#readme",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "cheerio": "^1.0.0-rc.12",
+    "typescript": "^5.2.2",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@types/xml2js": "^0.4.12"
+  }
+}
