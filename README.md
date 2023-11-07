@@ -42,7 +42,7 @@ import { getMediaLinks } from "@sango-dev/tumblr-timeline"
 let data = await getMediaLinks("Programming", "photo", 10, 0)
 ```
 
-If you `using` require for import:
+If you `using` require to import:
 
 ```
 let tumblrTimeline = require("@sango-dev/tumblr-timeline")
