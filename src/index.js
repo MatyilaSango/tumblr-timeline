@@ -50,21 +50,21 @@ const getMediaLinks = (site, type, size, start) => __awaiter(void 0, void 0, voi
     if (data["error"])
         return data;
     for (start; start < size; start += _NUMBER_OF_DATA_PER_CYCLE) {
-        data.tumblr.posts[0].post.map((post) => {
+        data.tumblr.posts[0].post.map((post, indx) => {
             let _post = {
-                id: data.tumblr.posts[0].post[0]["$"].id,
-                url: data.tumblr.posts[0].post[0]["$"].url,
-                "url-with-slug": data.tumblr.posts[0].post[0]["$"]["url-with-slug"],
-                type: data.tumblr.posts[0].post[0]["$"].type,
-                date_gmt: data.tumblr.posts[0].post[0]["$"]["date-gmt"],
-                date: data.tumblr.posts[0].post[0]["$"].date,
-                unix_timestamp: data.tumblr.posts[0].post[0]["$"]["unix-timestamp"],
-                format: data.tumblr.posts[0].post[0]["$"].format,
-                reblog_key: data.tumblr.posts[0].post[0]["$"]["reblog-key"],
-                slug: data.tumblr.posts[0].post[0]["$"].slug,
-                note_count: data.tumblr.posts[0].post[0]["$"]["note-count"],
-                name: data.tumblr.posts[0].post[0]["$"]["reblogged-from-name"],
-                title: data.tumblr.posts[0].post[0]["$"]["reblogged-from-title"],
+                id: data.tumblr.posts[0].post[indx]["$"].id,
+                url: data.tumblr.posts[0].post[indx]["$"].url,
+                "url-with-slug": data.tumblr.posts[0].post[indx]["$"]["url-with-slug"],
+                type: data.tumblr.posts[0].post[indx]["$"].type,
+                date_gmt: data.tumblr.posts[0].post[indx]["$"]["date-gmt"],
+                date: data.tumblr.posts[0].post[indx]["$"].date,
+                unix_timestamp: data.tumblr.posts[0].post[indx]["$"]["unix-timestamp"],
+                format: data.tumblr.posts[0].post[indx]["$"].format,
+                reblog_key: data.tumblr.posts[0].post[indx]["$"]["reblog-key"],
+                slug: data.tumblr.posts[0].post[indx]["$"].slug,
+                note_count: data.tumblr.posts[0].post[indx]["$"]["note-count"],
+                name: data.tumblr.posts[0].post[indx]["$"]["reblogged-from-name"],
+                title: data.tumblr.posts[0].post[indx]["$"]["reblogged-from-title"],
                 media_url: [],
             };
             switch (type.toLocaleLowerCase()) {
