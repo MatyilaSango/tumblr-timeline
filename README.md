@@ -1,6 +1,6 @@
 # tumblr-timeline
 
-Get medias in a user's timeline.
+Get media in a user's timeline.
 
 ## Installing
 
@@ -17,19 +17,41 @@ $ npm install @sango-dev/tumblr-timeline
  * Get all media links from a tumblr account.
  *
  * @param site Account name
- * @param type video or photo
+ * @param type video or photo or all
  * @param size Number of posts you want to get
  * @param start Initial start
  * @returns '{ account: string; total_nmber_of_posts: number; size: number; data: string[]; } | { error: "Page not found!" }'
  */
+ getMediaLinks(site: string, type: string, size: number, start: number): Promise<IDataFound | IError>;
+```
+```
+/**
+* Get total number of posts for media type video, photo, or all.
+* @param site Account name
+* @param type video/photo/all 
+* @returns Total number of posts
+*/
+getTotalNumberOfPosts(site: string, type: string): Promise<number | IError>;
 ```
 
 ## Usage example:
 
 ```
-import { getMediaLinks } from "@sango-dev/tumblr-timeline"
+import {TumblrTimelime} from "@sango-dev/tumblr-timeline"
+let tumblrTimelimeObj = new TumblrTimelime()
 
-getMediaLinks("Programming", "photo", 10, 0).then(results => {
+// Get photos
+tumblrTimelimeObj.getMediaLinks("Programming", "photo", 10, 0).then(results => {
+    let data = results
+})
+
+// Get videos
+tumblrTimelimeObj.getMediaLinks("Programming", "video", 10, 0).then(results => {
+    let data = results
+})
+
+// Get all
+tumblrTimelimeObj.getMediaLinks("Programming", "all", 10, 0).then(results => {
     let data = results
 })
 ```
@@ -38,16 +60,33 @@ or
 
 ```
 import { getMediaLinks } from "@sango-dev/tumblr-timeline"
+let tumblrTimelimeObj = new TumblrTimelime()
 
-let data = await getMediaLinks("Programming", "photo", 10, 0)
+let data = await tumblrTimelimeObj.getMediaLinks("Programming", "photo", 10, 0) // Get photos
+
+let data = await tumblrTimelimeObj.getMediaLinks("Programming", "video", 10, 0) // Get videos
+
+let data = await tumblrTimelimeObj.getMediaLinks("Programming", "all", 10, 0) // Get all
 ```
 
 If you `using` require to import:
 
 ```
-let tumblrTimeline = require("@sango-dev/tumblr-timeline")
+let {TumblrTimelime} = require("@sango-dev/tumblr-timeline")
+let tumblrTimelimeObj = new TumblrTimelime()
 
-tumblrTimeline.getMediaLinks("Programming", "photo", 10, 0).then(results => {
+// Get photos
+tumblrTimelimeObj.getMediaLinks("Programming", "photo", 10, 0).then(results => {
+    let data = results
+})
+
+// Get videos
+tumblrTimelimeObj.getMediaLinks("Programming", "video", 10, 0).then(results => {
+    let data = results
+})
+
+// Get all
+tumblrTimelimeObj.getMediaLinks("Programming", "all", 10, 0).then(results => {
     let data = results
 })
 ```
@@ -55,9 +94,14 @@ tumblrTimeline.getMediaLinks("Programming", "photo", 10, 0).then(results => {
 or
 
 ```
-let tumblrTimeline = require("@sango-dev/tumblr-timeline")
+let {TumblrTimelime} = require("@sango-dev/tumblr-timeline")
+let tumblrTimelimeObj = new TumblrTimelime()
 
-let data = await tumblrTimeline.getMediaLinks("Programming", "photo", 10, 0)
+let data = await tumblrTimelimeObj.getMediaLinks("Programming", "photo", 10, 0) // Get photos
+
+let data = await tumblrTimelimeObj.getMediaLinks("Programming", "videos", 10, 0) // Get videos
+
+let data = await tumblrTimelimeObj.getMediaLinks("Programming", "all", 10, 0) // Get all media
 ```
 
 ## Response format:
